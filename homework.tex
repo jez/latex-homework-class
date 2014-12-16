@@ -1,0 +1,99 @@
+\documentclass[11pt]{homework}
+
+\newcommand{\hwname}{Jacob Zimmerman}
+\newcommand{\hwemail}{jezimmer}
+\newcommand{\hwtype}{Homework}
+\newcommand{\hwnum}{0}
+\newcommand{\hwclass}{12-345}
+\newcommand{\hwlecture}{0}
+\newcommand{\hwsection}{Z}
+
+\begin{document}
+\maketitle
+
+\question
+  This is my answer to the first question.
+
+  Don't forget to fill in your personal and class information at the top!
+
+\question
+  This question's number will be auto-incremented.
+
+\question*{Super Fancy Named Question}
+  This question was given a fancy name!
+
+\question
+  Question numbers continue to auto-increment, regardless of question type.
+
+% Use \renewcommand{\questiontype}{<text>} to change what word is displayed
+% before numbered questions
+\renewcommand{\questiontype}{Task}
+\question
+  This question has a different question type!
+
+\renewcommand{\questiontype}{Question}
+
+% Use the \setcounter{questionCounter}{<x>} to force the question number to a
+% particular question. If your written homework's question start at number 8,
+% use the following
+\setcounter{questionCounter}{7}
+\question
+  Whoa this question starts at number 8!
+
+\question
+  Use the arabicparts environment to include the questionCounter number in the list.
+  \begin{arabicparts}
+    \item Use \LaTeX
+    \item ???
+    \item Profit!
+  \end{arabicparts}
+
+\question
+  Use the alphaparts environment to for letters instead of numbers.
+  \begin{alphaparts}
+    \item Use \LaTeX
+    \item ???
+    \item Profit!
+  \end{alphaparts}
+
+\question
+  You can still do things like nesting lists inside of these environments.
+  \begin{alphaparts}
+    \item Use \LaTeX
+      \begin{enumerate}
+        \item Open terminal
+        \item Open vim
+        \item Write LaTeX
+      \end{enumerate}
+    \item ???
+    \item Profit!
+  \end{alphaparts}
+
+\question
+  Using the \texttt{induction} environment is a great way to typeset induction proofs!
+  \begin{induction}
+    \basecase
+      Here I have my base case.
+      This is usually about 1-2 lines of text that is not entirely difficult to come up with.
+      That doesn't mean it's not important though!
+    \indhyp
+      Assume cool things to make proof work. Look, math:
+      \[a^2 + b^2 = c^2\]
+    \indstep
+      Prove all the things.  When in doubt, write in Latin, because things
+      written in Latin sound more true.  Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Maecenas tempor risus in dapibus aliquam. Donec at
+      euismod dui. In libero turpis, blandit quis vestibulum ac, rutrum sit amet
+      est. Suspendisse nec lacus vel dui lobortis lacinia at sit amet risus.
+      Fusce dui ex, imperdiet nec finibus ut, bibendum a lacus.
+  \end{induction}
+
+  Therefore, we have proven the claim by induction in the \texttt{induction} environment.
+
+\section{}
+  You can also use the \texttt{section} macro for starting a question.
+
+\section*{Using the \texttt{section} Macro}
+  The starred \texttt{section*} works as well.
+
+\end{document}
