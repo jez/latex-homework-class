@@ -20,7 +20,7 @@ git pull
 
 to update the template.
 
-### _Preferred Installation_
+### Preferred Installation
 
 The best way to install this file is to [follow the instructions here][install], keeping in mind that you're trying to install a `.cls` file instead of three `.sty` files.
 
