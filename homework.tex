@@ -8,6 +8,10 @@
 \newcommand{\hwlecture}{0}
 \newcommand{\hwsection}{Z}
 
+% This is just used to generate filler content. You don't need it in an actual
+% homework!
+\usepackage{lipsum}
+
 \begin{document}
 \maketitle
 
@@ -16,59 +20,21 @@
 
   Don't forget to fill in your personal and class information at the top!
 
+  \lipsum[1]
+
 \question
   This question's number will be auto-incremented.
+
+  \lipsum[2]
 
 \question*{Super Fancy Named Question}
   This question was given a fancy name!
 
-\question
-  Question numbers continue to auto-increment, regardless of question type.
+  \lipsum[3]
 
-% Use \renewcommand{\questiontype}{<text>} to change what word is displayed
-% before numbered questions
-\renewcommand{\questiontype}{Task}
-\question
-  This question has a different question type!
-
-\renewcommand{\questiontype}{Question}
-
-% Use the \setcounter{questionCounter}{<x>} to force the question number to a
-% particular question. If your written homework's question start at number 8,
-% use the following
-\setcounter{questionCounter}{7}
-\question
-  Whoa this question starts at number 8!
-
-\question
-  Use the arabicparts environment to include the questionCounter number in the list.
-  \begin{arabicparts}
-    \item Use \LaTeX
-    \item ???
-    \item Profit!
-  \end{arabicparts}
-
-\question
-  Use the alphaparts environment to for letters instead of numbers.
-  \begin{alphaparts}
-    \item Use \LaTeX
-    \item ???
-    \item Profit!
-  \end{alphaparts}
-
-\question
-  You can still do things like nesting lists inside of these environments.
-  \begin{alphaparts}
-    \item Use \LaTeX
-      \begin{enumerate}
-        \item Open terminal
-        \item Open vim
-        \item Write LaTeX
-      \end{enumerate}
-    \item ???
-    \item Profit!
-  \end{alphaparts}
-
+% Sometimes questions get separated from their bodies. Use a \newpage to force
+% them to wrap to the next page.
+\newpage
 \question
   Using the \texttt{induction} environment is a great way to typeset induction proofs!
   \begin{induction}
@@ -90,10 +56,75 @@
 
   Therefore, we have proven the claim by induction in the \texttt{induction} environment.
 
+\question
+  Use the arabicparts environment to include the questionCounter number in the list.
+  \begin{arabicparts}
+    \item Use \LaTeX
+    \item ???
+    \item Profit!
+  \end{arabicparts}
+
+  \lipsum[7]
+
+\question
+  Use the alphaparts environment to for letters instead of numbers.
+  \begin{alphaparts}
+    \item
+      Use \LaTeX
+
+      \lipsum[8]
+    \item ???
+    \item Profit!
+  \end{alphaparts}
+
+\question
+  Question numbers continue to auto-increment, regardless of question type.
+
+  \lipsum[4]
+
+% Use \renewcommand{\questiontype}{<text>} to change what word is displayed
+% before numbered questions
+\renewcommand{\questiontype}{Task}
+\question
+  This question has a different question type!
+
+  \lipsum[5]
+
+\renewcommand{\questiontype}{Question}
+
+\question
+  You can still do things like nesting lists inside of these environments.
+  \begin{alphaparts}
+    \item Use \LaTeX
+      \begin{enumerate}
+        \item Open terminal
+        \item Open vim
+        \item Write LaTeX
+      \end{enumerate}
+    \item ???
+    \item Profit!
+  \end{alphaparts}
+
+  \lipsum[9]
+
+% Use the \setcounter{questionCounter}{<x>} to force the question number to a
+% particular question. If your written homework's question start at number 9001,
+% use the following
+\setcounter{questionCounter}{9000}
+\question
+  \href{https://www.youtube.com/watch?v=SiMHTK15Pik}{It's over 9000!!!}
+
+  \lipsum[6]
+
+
 \section{}
   You can also use the \texttt{section} macro for starting a question.
 
+  \lipsum[10]
+
 \section*{Using the \texttt{section} Macro}
   The starred \texttt{section*} works as well.
+
+  \lipsum[11]
 
 \end{document}
