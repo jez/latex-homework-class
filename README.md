@@ -44,6 +44,14 @@ To start a question, just type `\question`. It will add the text "Question #" wi
 \renewcommand{\questiontype}{Whatever You Want}
 ```
 
+Similarly, if you ever need to skip numbers, you can do
+
+```tex
+\setcounter{\questionCounter}{<target number - 1>}
+```
+
+So, to skip to the 10th question, `<target number - 1>` = 9.
+
 See [homework.tex](homework.tex) for more.
 
 ### `\question*`
