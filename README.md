@@ -36,6 +36,10 @@ The result is the following:
 
 The class file also has a bunch of helper `\usepackage`s that you might want to take a look at in [homework.cls](homework.cls).
 
+For your convenience, the file [template.tex](template.tex) is a nearly-empty
+LaTeX file that contains the bare essentials to get started using the homework
+class.
+
 ### `\question`
 
 To start a question, just type `\question`. It will add the text "Question #" with a line underneath to the document. If you'd like to change "Question" to something else, use
