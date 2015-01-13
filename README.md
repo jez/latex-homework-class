@@ -103,5 +103,18 @@ In math classes, induction proofs come up a lot, and they almost always have the
 \end{induction}
 ```
 
+### Anonymous Submissions
+
+Certain classes prefer to disassociate names from questions for a more fair
+grade assessment. To have your name placed only on a separate title page,
+include the `anonymous` option in the `\documentclass` line:
+
+```latex
+\documentclass[11pt,anonymous]{homework}
+```
+
+For truly anonymous submissions, make sure you remove all personally identifying
+information from your preamble.
+
 ## License
 MIT License, see [LICENSE](LICENSE).

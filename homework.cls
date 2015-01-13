@@ -2,6 +2,11 @@
 \LoadClassWithOptions{article}
 \ProvidesClass{homework}[2014/12/16 Class file for homework assignments]
 
+% ----- Options ---------------------------------------------------------------
+\newcommand\@opanon{0}
+\DeclareOption{anonymous}{\renewcommand\@opanon{1}}
+\ProcessOptions
+
 % ----- Packages --------------------------------------------------------------
 
 % Better fonts with accents
@@ -34,6 +39,9 @@
 
 % Links
 \RequirePackage{hyperref}
+
+% Conditionals
+\RequirePackage{ifthen}
 
 % ----- Questions -------------------------------------------------------------
 \newcounter{questionCounter}
@@ -126,30 +134,60 @@
 \pagestyle{empty}
 \pagestyle{fancy}
 
-\newcommand{\makeheader}[0]{%
-}
-\renewcommand{\maketitle}[0]{%
-  % Setup header
-  \setlength{\headheight}{15.2pt}
-  \lhead{\hwclass{} \hwlecture\hwsection}%
-  \chead{\hwname{} (\hwemail)}%
-  \rhead{\hwtype{} \hwnum}%
+%\if\@opanon%
+\ifthenelse{\equal{\@opanon}{0}}{%
+  \renewcommand{\maketitle}[0]{%
+    % Setup header
+    \setlength{\headheight}{15.2pt}
+    \lhead{\hwclass{} \hwlecture\hwsection}%
+    \chead{\hwname{} (\hwemail)}%
+    \rhead{\hwtype{} \hwnum}%
 
-  % Setup hrule in header
-  \renewcommand{\headrulewidth}{0pt}
-  \headrule{}
+    % Setup hrule in header
+    \renewcommand{\headrulewidth}{0pt}
+    \headrule{}
 
-  % Don't put header on first page
-  \thispagestyle{plain}
+    % Don't put header on first page
+    \thispagestyle{plain}
 
-  \begin{center}
-    {\Large \hwclass{} \hwtype{} \hwnum}
+    \begin{center}
+      {\Large \hwclass{} \hwtype{} \hwnum}
 
-    \hwname{} (\hwemail)
+      \hwname{} (\hwemail)
 
-    \today
-  \end{center}
-  \renewcommand{\headrulewidth}{0.4pt}
+      \today
+    \end{center}
+    \renewcommand{\headrulewidth}{0.4pt}
+  }
+
+}%
+{%
+  \renewcommand{\maketitle}[0]{%
+    % Don't set up header
+    %\setlength{\headheight}{15.2pt}
+    %\lhead{\hwclass{} \hwlecture\hwsection}%
+    %\chead{\hwname{} (\hwemail)}%
+    %\rhead{\hwtype{} \hwnum}%
+
+    % Don't setup hrule in header
+    %\renewcommand{\headrulewidth}{0pt}
+    %\headrule{}
+
+    % Make all pages plain
+    %\thispagestyle{plain}
+    \pagestyle{plain}
+
+    % Put header on it's own page
+    \begin{center}
+      {\Large \hwclass{} \hwtype{} \hwnum}
+
+      \hwname{} (\hwemail)
+
+      \today
+    \end{center}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \newpage
+  }
 }
 
 % -----------------------------------------------------------------------------
