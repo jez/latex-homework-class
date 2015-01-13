@@ -1,9 +1,9 @@
 TARGET=homework
 
-all: $(patsubst %.tex,%.pdf,$(wildcard *.tex))
+all: $(TARGET).pdf
 
 ## Generalized rule: how to build a .pdf from each .tex
-%.pdf: %.tex
+%.pdf: %.tex $(TARGET).cls
 	pdflatex -interaction nonstopmode $<
 
 touch:
