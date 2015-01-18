@@ -113,6 +113,15 @@ include the `anonymous` option in the `\documentclass` line:
 \documentclass[11pt,anonymous]{homework}
 ```
 
+### One question per page
+
+If you'd like each question to begin on a new page, include the `newpage`
+option:
+
+```latex
+\documentclass[11pt,newpage]{homework}
+```
+
 For truly anonymous submissions, make sure you remove all personally identifying
 information from your preamble.
 

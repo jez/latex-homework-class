@@ -5,6 +5,8 @@
 % ----- Options ---------------------------------------------------------------
 \newcommand\@opanon{0}
 \DeclareOption{anonymous}{\renewcommand\@opanon{1}}
+\newcommand\@opnewpage{0}
+\DeclareOption{newpage}{\renewcommand\@opnewpage{1}}
 \ProcessOptions
 
 % ----- Packages --------------------------------------------------------------
@@ -59,6 +61,11 @@
 % Numbered question
 \providecommand{\question}{}
 \renewcommand{\question}[0]{%
+  % Emit \newpage if option `newpage` is present
+  \ifthenelse{\equal{\@opnewpage}{1}}{%
+    \newpage
+  }{}
+
   % Wrap in minipage so that we don't get a line break enywhere in between
   \begin{minipage}{\linewidth}%
     \stepcounter{questionCounter}%
@@ -78,6 +85,11 @@
 % Named question, takes one argument
 \WithSuffix\providecommand\question*{}
 \WithSuffix\renewcommand\question*[1]{%
+  % Emit \newpage if option `newpage` is present
+  \ifthenelse{\equal{\@opnewpage}{1}}{%
+    \newpage
+  }{}
+
   % Wrap in minipage so that we don't get a line break enywhere in between
   \begin{minipage}{\linewidth}%
     \addtocounter{questionCounter}{1}%
@@ -163,18 +175,7 @@
 }%
 {%
   \renewcommand{\maketitle}[0]{%
-    % Don't set up header
-    %\setlength{\headheight}{15.2pt}
-    %\lhead{\hwclass{} \hwlecture\hwsection}%
-    %\chead{\hwname{} (\hwemail)}%
-    %\rhead{\hwtype{} \hwnum}%
-
-    % Don't setup hrule in header
-    %\renewcommand{\headrulewidth}{0pt}
-    %\headrule{}
-
     % Make all pages plain
-    %\thispagestyle{plain}
     \pagestyle{plain}
 
     % Put header on it's own page
