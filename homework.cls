@@ -83,7 +83,7 @@
     \addtocounter{questionCounter}{1}%
     \setcounter{partCounter}{0}%
     \vspace{.2in}%
-      \noindent{\bf #1}%
+    \noindent{\bf \arabic{questionCounter}. #1}%
     \vspace{0.3em} \hrule \vspace{.1in}%
   \end{minipage}
 }
