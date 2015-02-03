@@ -24,7 +24,7 @@ to update the template.
 
 The best way to install this file is to [follow the instructions here][install], keeping in mind that you're trying to install a `.cls` file instead of three `.sty` files.
 
-[install]: https://github.com/Z1MM32M4N/latex-solarized#installation
+[install]: https://github.com/jez/latex-solarized#installation
 
 ## Usage
 
