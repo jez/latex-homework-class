@@ -87,9 +87,8 @@
 \WithSuffix\renewcommand\question*[1]{%
   % Emit \newpage if option `newpage` is present
   \ifthenelse{\equal{\@opnewpage}{1}}{%
-    \newpage
-  }{}
-
+    \newpage%
+  }{}%
   % Wrap in minipage so that we don't get a line break enywhere in between
   \begin{minipage}{\linewidth}%
     \addtocounter{questionCounter}{1}%
