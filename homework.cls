@@ -7,6 +7,8 @@
 \DeclareOption{anonymous}{\renewcommand\@opanon{1}}
 \newcommand\@opnewpage{0}
 \DeclareOption{newpage}{\renewcommand\@opnewpage{1}}
+\newcommand\@oplargemargins{0}
+\DeclareOption{largemargins}{\renewcommand\@oplargemargins{1}}
 \ProcessOptions
 
 % ----- Packages --------------------------------------------------------------
@@ -36,15 +38,15 @@
 \RequirePackage{fancyvrb}
 \RequirePackage{listings}
 
+% Conditionals
+\RequirePackage{ifthen}
+
 % Header & Page Setup
 \RequirePackage{fancyhdr}
-\RequirePackage{fullpage}
+\ifthenelse{\equal{\@oplargemargins}{1}}{}{\RequirePackage{fullpage}}
 
 % Links
 \RequirePackage{hyperref}
-
-% Conditionals
-\RequirePackage{ifthen}
 
 % ----- Questions -------------------------------------------------------------
 \newcounter{questionCounter}

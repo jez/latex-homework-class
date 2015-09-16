@@ -113,6 +113,9 @@ include the `anonymous` option in the `\documentclass` line:
 \documentclass[11pt,anonymous]{homework}
 ```
 
+For truly anonymous submissions, make sure you remove all personally identifying
+information from your preamble.
+
 ### One question per page
 
 If you'd like each question to begin on a new page, include the `newpage`
@@ -122,8 +125,18 @@ option:
 \documentclass[11pt,newpage]{homework}
 ```
 
-For truly anonymous submissions, make sure you remove all personally identifying
-information from your preamble.
+### Spacious margins
+
+To enhance the readability of your documents, you can add the `largemargins`
+option to your documents. This fits less content on a single page, but makes it
+much more comfortable for your eyes to scan across the lines.
+
+```latex
+\documentclass[11pt,largemargins]
+```
+
+This is the default in the template and the example file. Remove this option to
+have your text fill more space on the page.
 
 ## License
 MIT License, see [LICENSE](LICENSE).
