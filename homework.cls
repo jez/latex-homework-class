@@ -30,6 +30,7 @@
 
 % Nice images, figures, and listings
 \RequirePackage{graphicx}
+\RequirePackage{grffile}
 \RequirePackage[all]{xy}
 \RequirePackage{wrapfig}
 \RequirePackage{fancyvrb}
@@ -190,5 +191,10 @@
     \newpage
   }
 }
+
+% ----- For usage with pandoc converted documents -----------------------------
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 % -----------------------------------------------------------------------------
