@@ -109,14 +109,14 @@
 % ----- Question Parts --------------------------------------------------------
 
 \newenvironment{alphaparts}[0]{%
-  \begin{enumerate}[label=\textbf{(\alph*)}]%
+  \begin{enumerate}[label=\textbf{(\alph{partCounter})}]%
 }{\end{enumerate}}
 
 \newenvironment{arabicparts}[0]{%
-  \begin{enumerate}[label=\textbf{\arabic{questionCounter}.\arabic*})]%
+  \begin{enumerate}[label=\textbf{\arabic{questionCounter}.\arabic{partCounter}})]%
 }{\end{enumerate}}
 
-\newcommand{\questionpart}[0]{\item}
+\newcommand{\questionpart}[0]{\stepcounter{partCounter}\item}
 
 % ----- Induction Environment -------------------------------------------------
 
