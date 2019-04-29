@@ -57,23 +57,38 @@
 \question
   Use the arabicparts environment to include the questionCounter number in the list.
   \begin{arabicparts}
-    \item Use \LaTeX
-    \item ???
-    \item Profit!
+    \questionpart Use \LaTeX
+    \questionpart ???
+    \questionpart Profit!
   \end{arabicparts}
 
   \lipsum[7]
 
 \question
-  Use the alphaparts environment to for letters instead of numbers.
+  Use the alphaparts environment for letters instead of numbers.
   \begin{alphaparts}
-    \item
+    \questionpart
       Use \LaTeX
-
-      \lipsum[8]
-    \item ???
-    \item Profit!
+    \questionpart ???
+    \questionpart Profit!
   \end{alphaparts}
+
+\question
+    Question part numbers are auto-incremented within the same question, so if you have some question parts...
+
+    \begin{alphaparts}
+        \questionpart
+            Use \LaTeX
+        \questionpart ???
+    \end{alphaparts}
+
+    Followed by some additional text, followed by some more question parts:
+
+    \begin{alphaparts}
+        \questionpart Profit!
+    \end{alphaparts}
+
+    All parts will be continuously numbered.
 
 \question
   Question numbers continue to auto-increment, regardless of question type.
@@ -93,14 +108,14 @@
 \question
   You can still do things like nesting lists inside of these environments.
   \begin{alphaparts}
-    \item Use \LaTeX
+    \questionpart Use \LaTeX
       \begin{enumerate}
         \item Open terminal
         \item Open vim
         \item Write LaTeX
       \end{enumerate}
-    \item ???
-    \item Profit!
+    \questionpart ???
+    \questionpart Profit!
   \end{alphaparts}
 
   \lipsum[9]
