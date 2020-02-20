@@ -148,6 +148,18 @@
 \pagestyle{empty}
 \pagestyle{fancy}
 
+% make header options optional
+
+\newcommand{\hwname}{}
+\newcommand{\hwemail}{}
+\newcommand{\hwstudentid}{}
+\newcommand{\hwtype}{}
+\newcommand{\hwnum}{}
+\newcommand{\hwclass}{}
+\newcommand{\hwduedate}{}
+\newcommand{\hwlecture}{}
+\newcommand{\hwsection}{}
+
 %\if\@opanon%
 \ifthenelse{\equal{\@opanon}{0}}{%
   \renewcommand{\maketitle}[0]{%
@@ -168,7 +180,7 @@
     \begin{center}
       {\Large \hwclass{} \hwtype{} \hwnum}
 
-      \hwname{} (\hwemail)
+      \hwname{} \ifthenelse{\equal{\hwemail}{}}{}{(\hwemail)}
 
       \today
     \end{center}
