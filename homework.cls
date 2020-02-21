@@ -153,13 +153,12 @@
 \newcommand{\setupheader}{%
   \ifthenelse{\isundefined{\hwname}}{\newcommand{\hwname}{}}{}
   \ifthenelse{\isundefined{\hwemail}}{\newcommand{\hwemail}{}}{}
-  \ifthenelse{\isundefined{\hwstudentid}}{\newcommand{\hwstudentid}{}}{}
   \ifthenelse{\isundefined{\hwtype}}{\newcommand{\hwtype}{}}{}
   \ifthenelse{\isundefined{\hwnum}}{\newcommand{\hwnum}{}}{}
   \ifthenelse{\isundefined{\hwclass}}{\newcommand{\hwclass}{}}{}
-  \ifthenelse{\isundefined{\hwduedate}}{\newcommand{\hwduedate}{}}{}
   \ifthenelse{\isundefined{\hwlecture}}{\newcommand{\hwlecture}{}}{}
   \ifthenelse{\isundefined{\hwsection}}{\newcommand{\hwsection}{}}{}
+  \ifthenelse{\isundefined{\hwdate}}{\newcommand{\hwdate}{\today}}{}
 }
 
 %\if\@opanon%
@@ -187,7 +186,7 @@
 
       \hwname{} \ifthenelse{\equal{\hwemail}{}}{}{(\hwemail)}
 
-      \today
+      \hwdate
     \end{center}
     \renewcommand{\headrulewidth}{0.4pt}
   }
@@ -207,7 +206,7 @@
 
       \hwname{} (\hwemail)
 
-      \today
+      \hwdate
     \end{center}
     \renewcommand{\headrulewidth}{0.4pt}
     \newpage
