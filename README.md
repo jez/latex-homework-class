@@ -138,5 +138,22 @@ much more comfortable for your eyes to scan across the lines.
 This is the default in the template and the example file. Remove this option to
 have your text fill more space on the page.
 
+### Header options
+
+The class contains a number of header options that can be filled with your information. All options are optional and will be left blank if a manual newcommand is not provided. Most options are self-explanatory, but the following require additional explaination:
+
+```latex
+\newcommand{\hwlecture}{0}
+\newcommand{\hwsection}{Z}
+```
+
+These two commands appear only if more than one page is present, and are set to the right of hwclass on the left side of the header.
+
+```latex
+\newcommand{\hwdate}{Date}
+````
+
+This command manually sets a date. If not defined, the current date will be automatically inserted.
+
 ## License
 MIT License, see [LICENSE](LICENSE).
