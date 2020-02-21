@@ -150,20 +150,25 @@
 
 % make header options optional
 
-\newcommand{\hwname}{}
-\newcommand{\hwemail}{}
-\newcommand{\hwstudentid}{}
-\newcommand{\hwtype}{}
-\newcommand{\hwnum}{}
-\newcommand{\hwclass}{}
-\newcommand{\hwduedate}{}
-\newcommand{\hwlecture}{}
-\newcommand{\hwsection}{}
+\newcommand{\setupheader}{%
+  \ifthenelse{\isundefined{\hwname}}{\newcommand{\hwname}{}}{}
+  \ifthenelse{\isundefined{\hwemail}}{\newcommand{\hwemail}{}}{}
+  \ifthenelse{\isundefined{\hwstudentid}}{\newcommand{\hwstudentid}{}}{}
+  \ifthenelse{\isundefined{\hwtype}}{\newcommand{\hwtype}{}}{}
+  \ifthenelse{\isundefined{\hwnum}}{\newcommand{\hwnum}{}}{}
+  \ifthenelse{\isundefined{\hwclass}}{\newcommand{\hwclass}{}}{}
+  \ifthenelse{\isundefined{\hwduedate}}{\newcommand{\hwduedate}{}}{}
+  \ifthenelse{\isundefined{\hwlecture}}{\newcommand{\hwlecture}{}}{}
+  \ifthenelse{\isundefined{\hwsection}}{\newcommand{\hwsection}{}}{}
+}
 
 %\if\@opanon%
 \ifthenelse{\equal{\@opanon}{0}}{%
   \renewcommand{\maketitle}[0]{%
     % Setup header
+
+    \setupheader
+
     \setlength{\headheight}{15.2pt}
     \setlength{\headsep}{0.2in}
     \lhead{\hwclass{} \hwlecture\hwsection}%
@@ -192,6 +197,9 @@
   \renewcommand{\maketitle}[0]{%
     % Make all pages plain
     \pagestyle{plain}
+
+    % Complete any blank options
+    \completeoptions
 
     % Put header on it's own page
     \begin{center}
